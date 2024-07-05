@@ -44,6 +44,23 @@
 		<div class="box two">
 		</div>
 	</div>
+
+
+	<div id="content"></div>
+
+    <script>
+        fetch("https://ci-swapi.herokuapp.com/api/")
+            .then(response => response.json()) // or .json()
+            .then(data => displayData(data.people))
+            .catch((e) => {
+                console.error("Error: ", e)
+            })
+        function displayData(data) {
+            document.getElementById("content").innerText = data;
+        }
+        
+    </script>
+
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
